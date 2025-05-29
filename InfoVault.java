@@ -23,7 +23,7 @@ public class InfoVault extends JFrame{
 	JPanel userTypeButtons = new JPanel();
 	JLabel userTypeText = new JLabel("LOG IN AS");
 	JButton adminButton = new JButton("Admin");
-	JButton userButton = new JButton("User");
+	JButton studentButton = new JButton("Student");
 	
 	//Login components
 	JPanel loginArea = new JPanel();
@@ -102,15 +102,15 @@ public class InfoVault extends JFrame{
 				));
 		userTypeButtons.add(adminButton);
 		
-		userButton.setBackground(Color.decode("#2B2D42"));
-		userButton.setFocusable(false);
-		userButton.setFont(new Font("Monospace", Font.PLAIN, 30));
-		userButton.setForeground(Color.WHITE);
-		userButton.setBorder(BorderFactory.createCompoundBorder(
+		studentButton.setBackground(Color.decode("#2B2D42"));
+		studentButton.setFocusable(false);
+		studentButton.setFont(new Font("Monospace", Font.PLAIN, 30));
+		studentButton.setForeground(Color.WHITE);
+		studentButton.setBorder(BorderFactory.createCompoundBorder(
 				BorderFactory.createRaisedBevelBorder(),
 				BorderFactory.createEmptyBorder(10, 10, 10, 10)
 				));
-		userTypeButtons.add(userButton);
+		userTypeButtons.add(studentButton);
 		
 		ugbc.gridy = 1;
 		userTypePanel.add(userTypeButtons, ugbc);
@@ -392,7 +392,7 @@ public class InfoVault extends JFrame{
 			cardLayout.show(mainPanel, "login");
 		});
 		
-		userButton.addActionListener((e) -> {
+		studentButton.addActionListener((e) -> {
 			cardLayout.show(mainPanel, "login");
 		});
 		
