@@ -441,4 +441,8 @@ public class InfoVault extends JFrame{
 	            		"Login Failed", JOptionPane.ERROR_MESSAGE);
 	            return;
 	        }
+		JOptionPane.showMessageDialog(this, "Login Successful!");
+		userName.setText(userID);
+		welcomeText.setText("Welcome to InfoVault, " + userID);
+        	cardLayout.show(mainPanel, "dashboard");
 }
