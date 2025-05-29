@@ -397,19 +397,7 @@ public class InfoVault extends JFrame{
 		});
 		
 		loginButton.addActionListener((e) -> {
-	        String userID = userIDField.getText();
-	        String password = new String(userPasswordField.getPassword());
-	        if (userID.equals("12345") && password.equals("admin123")) {
-	            JOptionPane.showMessageDialog(this, "Login Successful!");
-	            
-				userName.setText(userID);
-				welcomeText.setText("Welcome to InfoVault, " + userID);
-	            cardLayout.show(mainPanel, "dashboard");
-	        } else {
-	            JOptionPane.showMessageDialog(this, 
-	            		"Invalid student number or password.", 
-	            		"Login Failed", JOptionPane.ERROR_MESSAGE);
-	        }
+			handleLogin();
 		});
 		
 		logoutButton.addActionListener((e) -> {
@@ -436,4 +424,21 @@ public class InfoVault extends JFrame{
 		Timer t = new Timer(1000, updateTime);
 		t.start();
 	}
+
+	void handleLogin() {
+	        String userID = userIDField.getText();
+	        String password = new String(userPasswordField.getPassword());
+	        if (userID.trim().isEmpty() || password.trim().isEmpty()) {
+	            JOptionPane.showMessageDialog(this, 
+	            		"Fill in the required fields", 
+	            		"Login Failed", JOptionPane.ERROR_MESSAGE);
+	            return;
+	        }
+	        
+	        if (!userID.equals("12345") || !password.equals("admin123")) {
+	            JOptionPane.showMessageDialog(this, 
+	            		"Invalid Credentials", 
+	            		"Login Failed", JOptionPane.ERROR_MESSAGE);
+	            return;
+	        }
 }
